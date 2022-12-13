@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) 2022, Henrik Geißler
+ */
+/*
+ * This is the entry point if you run `yarn expo:start`
+ * If you run `yarn ios` or `yarn android`, it'll use ./index.js instead.
+ */
+import { registerRootComponent } from 'expo'
+import * as SplashScreen from 'expo-splash-screen'
+import React from 'react'
+
+import App from './app/app'
+
+SplashScreen.preventAutoHideAsync()
+const IgniteApp = () => <App hideSplashScreen={SplashScreen.hideAsync} />
+registerRootComponent(IgniteApp)
+
+export default IgniteApp
